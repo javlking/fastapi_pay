@@ -47,8 +47,8 @@ class Transaction(Base):
 
     reg_date = Column(DateTime)
 
-    card_from_fk = relationship(Card, lazy='subquery')
-    card_to_fk = relationship(Card, lazy='subquery')
+    card_from_fk = relationship(Card, lazy='subquery', foreign_keys=[card_from])
+    card_to_fk = relationship(Card, lazy='subquery', foreign_keys=[card_to])
 
     user_id = Column(Integer, ForeignKey('users.id'))
     user_fk = relationship(User, lazy='subquery')

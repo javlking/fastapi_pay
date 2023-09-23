@@ -32,7 +32,7 @@ async def login_user(phone_number: int = Body(...), password: str = Body(...)):
 # Добавить фото профиля
 @user_router.post('/upload-photo')
 async def upload_photo(user_id: int = Body(...),
-                       photo_file: UploadFile = Body(...)):
+                       photo_file: UploadFile = None):
 
     photo_path = f'media/{photo_file.filename}'
     # сохранение пути к файлу
