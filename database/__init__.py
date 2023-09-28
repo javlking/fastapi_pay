@@ -9,7 +9,7 @@ Base = declarative_base()
 
 from database import models
 
-ssh root@32.846.4264.738
+# ssh root@32.846.4264.738
 # Генератор подключений
 def get_db():
     db = SessionLocal()
